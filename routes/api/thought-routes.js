@@ -32,23 +32,23 @@ router
   .route('/:userId')
   .post(createThought);
 
-// get a thought by ID
-// update a thought by ID
-// delete a thought by ID
+// get a thought by its ID
+// edit a thought by its ID
+// delete a thought by its ID
 // route: /api/thoughts/:id
-  // router
-  // .route('/:id')
-  // .get(getUserById)
-  // .put(updateUser)
-  // .delete(deleteUser);
+router
+  .route('/:id')
+  .get(getThoughtById)
+  .put(updateThought)
+  .delete(deleteThought);
 
-// add a friend to a user
-// delete a friend from a user
-// route: /api/users/:id/friends/:friendId
-  // router
-  // .route('/:id/friends/:friendId')
-  // .post(addFriend)
-  // .delete(deleteFriend);
+  
+// add reaction to a given thought
+// route: api/thoughts/:thoughtId/reactions
+
+// delete reaction based on its reactionId
+// route: api/thoughts/:thoughtId/reactions/:reactionId
+
 
 module.exports = router;
 
