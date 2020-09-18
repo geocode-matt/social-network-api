@@ -39,11 +39,11 @@ router
 
 // add a friend to a user
 // delete a friend from a user
-// /api/users/
-//   router
-//   .route('/:id')
-//   .put(updateUser)
-//   .delete(deleteUser);
+// /api/users/:id/friends/:friendId
+  router
+  .route('/:id/friends/:friendId')
+  .post(addFriend)
+  .delete(deleteFriend);
 
 module.exports = router;
 

@@ -83,6 +83,36 @@ const usersController = {
             res.json(dbUserData);
         })
         .catch(err => res.status(400).json(err));
+    },
+
+    //add a friend to a user
+    addFriend({params}, res) {
+        Users.findOneAndUpdate({_id: params.id}, {$push: { friends: params.friendId}}, {new: true})
+        .populate({path: 'friends', select: ('-__v')})
+        .select('-__v')
+        .then(dbUsersData => {
+            if (!dbUsersData) {
+                res.status(404).json({message: 'Not a valid user.'});
+                return;
+            }
+        res.json(dbUsersData);
+        })
+        .catch(err => res.json(err));
+    },
+
+    // delete a friend from a user
+    deleteFriend({ params }, res) {
+        Users.findOneAndUpdate({_id: params.id}, {$pull: { friends: params.friendId}}, {new: true})
+        .populate({path: 'friends', select: '-__v'})
+        .select('-__v')
+        .then(dbUsersData => {
+            if(!dbUsersData) {
+                res.status(404).json({message: 'Not a valid user.'});
+                return;
+            }
+            res.json(dbUsersData);
+        })
+        .catch(err => res.status(400).json(err));
     }
 
 }
