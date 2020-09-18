@@ -18,3 +18,11 @@ const {
     addReaction,
     deleteReaction
 } = require('../../controllers/thoughts-controller');
+
+
+router
+  .route('/')
+  .get(getAllThoughts)
+  .post(createThought);
+
+module.exports = router;

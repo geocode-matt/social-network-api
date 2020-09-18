@@ -11,6 +11,16 @@ const { Users } = require('../models');
 
 const usersController = {
 
+    // Create User
+    createUser({body}, res) {
+        Users.create(body)
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+            console.log(err);
+            res.sendStatus(400);
+          });
+    },
+
     // Get all users
     getAllUsers(req, res) {
         Users.find({})
@@ -22,6 +32,14 @@ const usersController = {
             path: 'friends',
             select: '-__v'
         })
+        .select('-__v')
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+            console.log(err);
+            res.sendStatus(400);
+        });
     }
 
 }
+
+module.exports = usersController;

@@ -18,3 +18,33 @@ const {
     addFriend,
     deleteFriend
 } = require('../../controllers/users-controller');
+
+// get all users
+// create a user
+// /api/users
+router
+  .route('/')
+  .get(getAllUsers)
+  .post(createUser);
+
+// get a user  by ID
+// update a user by ID
+// delete a user by ID
+// /api/users/:id
+//   router
+//   .route('/:id')
+//   .get(getUserById)
+//   .put(updateUser)
+//   .delete(deleteUser);
+
+// add a friend to a user
+// delete a friend from a user
+// /api/users/
+//   router
+//   .route('/:id')
+//   .put(updateUser)
+//   .delete(deleteUser);
+
+module.exports = router;
+
+
