@@ -1,14 +1,5 @@
 const router = require('express').Router();
 
-// USER ROUTES //
-// get all users
-// get a user by its _id, populate thoughts and friends data
-// create a new user
-// update a user
-// delete a user
-// add a friend to a user's friend list
-// delete a friend from a user's friend list
-
 const {
     getAllUsers,
     getUserById,
@@ -21,7 +12,7 @@ const {
 
 // get all users
 // create a user
-// /api/users
+// route: /api/users
 router
   .route('/')
   .get(getAllUsers)
@@ -30,7 +21,7 @@ router
 // get a user  by ID
 // update a user by ID
 // delete a user by ID
-// /api/users/:id
+// route: /api/users/:id
   router
   .route('/:id')
   .get(getUserById)
@@ -39,7 +30,7 @@ router
 
 // add a friend to a user
 // delete a friend from a user
-// /api/users/:id/friends/:friendId
+// route: /api/users/:id/friends/:friendId
   router
   .route('/:id/friends/:friendId')
   .post(addFriend)
