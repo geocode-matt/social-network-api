@@ -31,11 +31,11 @@ router
 // update a user by ID
 // delete a user by ID
 // /api/users/:id
-//   router
-//   .route('/:id')
-//   .get(getUserById)
-//   .put(updateUser)
-//   .delete(deleteUser);
+  router
+  .route('/:id')
+  .get(getUserById)
+  .put(updateUser)
+  .delete(deleteUser);
 
 // add a friend to a user
 // delete a friend from a user
