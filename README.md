@@ -26,9 +26,10 @@
   Download the application from the GitHub repository here: https://github.com/geocode-matt/social-network-api.
   
   ## Usage
-  Enter `npm init` followed by `npm install` in console to initialize the application and install dependencies.
-  <br>
-  Enter `npm start` to run the application
+  In Console:
+  1) `npm init` to initialize 
+  2) `npm install` to install dependencies
+  3) `npm start` to run the application
 
   ## Contribution Guidelines
   Please email the project owner (mlindenx@email.com) for contribution information. 
