@@ -1,4 +1,4 @@
-![GitHub top language](https://img.shields.io/github/languages/javascript/geocode-matt/social-network-api)
+![GitHub top language](https://img.shields.io/github/languages/top/geocode-matt/social-network-api)
 ![GitHub repo size](https://img.shields.io/github/repo-size/geocode-matt/social-network-api)
 ![GitHub](https://img.shields.io/github/license/geocode-matt/social-network-api)
 
