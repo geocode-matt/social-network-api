@@ -57,13 +57,13 @@ const ThoughtSchema = new Schema(
   }
 );
 
-  // get length of friends array
+  // get length of reactions array
   ThoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
   });
 
-  // create the User model using UserSchema
+  // create the Thoughts model using thoughtSchema
 const Thoughts = model('Thoughts', ThoughtSchema);
 
-// export the User model
+// export the Thoughts model
 module.exports = Thoughts;
