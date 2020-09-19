@@ -45,6 +45,9 @@ router
   
 // add reaction to a given thought
 // route: api/thoughts/:thoughtId/reactions
+router
+  .route('/:thoughtId/reactions')
+  .post(addReaction);
 
 // delete reaction based on its reactionId
 // route: api/thoughts/:thoughtId/reactions/:reactionId
