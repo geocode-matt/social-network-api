@@ -22,6 +22,9 @@
   ## Description
   This is an API for social networking. Users can share thoughts and add friends to their friend list.
 
+  Walkthrough Video Link:
+  https://drive.google.com/file/d/1DxIsBh2jl8A8bENHMrtg-Ho8KvkCzCR3/view
+
   ## Installation Instructions
   Download the application from the GitHub repository here: https://github.com/geocode-matt/social-network-api.
   
