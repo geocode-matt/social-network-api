@@ -1,15 +1,6 @@
 const { Thoughts, Users } = require('../models');
 const { db } = require('../models/Users');
 
-// THOUGHT ROUTES //
-// get all thoughts
-// get a thought by _id
-// create a new thought
-// update a thought
-// delete a thought
-// create a reaction to a thought
-// delete a reaction from a thought
-
 const thoughtsController = {
 
     // Create Thought
@@ -100,6 +91,21 @@ const thoughtsController = {
             res.json(dbThoughtsData);
         })
         .catch(err => res.status(400).json(err))
+    },
+
+    // Delete a reaction to a given thought
+    deleteReaction({params}, res) {
+        Thoughts.findOneAndUpdate({_id: params.thoughtId}, {$pull: {reactions: {reactionId: params.reactionId}}}, {new: true})
+        .populate({path: 'reactions', select: '-__v'})
+        .select('-__v')
+        .then(dbThoughtsData => {
+            if (!dbThoughtsData) {
+                res.status(404).json({message: 'No thoughts with this ID'});
+                return;
+            }
+            res.json(dbThoughtsData);
+        })
+        .catch(err => res.status(400).json(err));
     }
 
 }
